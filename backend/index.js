@@ -27,6 +27,23 @@ app.get("/", (req, res) => {
       return res.json(data);
     });
   });
+
+  app.post("/posts", (req, res) => {
+    const q = "INSERT INTO books(`title`, `descr`, `user_name`) VALUES (?)";
+  
+    const values = [
+      "BAD habits",
+      "mmmmmmmmmmmmmmmmmmmmmmmmmm",
+      "madam"
+    ];
+  
+    db.query(q, [values], (err, data) => {
+      if (err) return res.send(err);
+      return res.json(data);
+    });
+  });
+
+
   
 
 app.listen(8800, () => {
