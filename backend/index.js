@@ -16,6 +16,19 @@ app.get("/", (req, res) => {
     res.json("hello this is backend");
   })
 
+
+  app.get("/posts", (req, res) => {
+    const q = "SELECT * FROM posts";
+    db.query(q, (err, data) => {
+      if (err) {
+        
+        return res.json(err);
+      }
+      return res.json(data);
+    });
+  });
+  
+
 app.listen(8800, () => {
     console.log("Connected to backend.");
   });
