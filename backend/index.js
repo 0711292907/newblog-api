@@ -11,7 +11,7 @@ const db = mysql.createConnection({
     database: "test",
   });
   
-  
+  app.use(express.json());
 app.get("/", (req, res) => {
     res.json("hello this is backend");
   })
