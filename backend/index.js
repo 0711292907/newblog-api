@@ -32,9 +32,10 @@ app.get("/", (req, res) => {
     const q = "INSERT INTO posts(`title`, `descr`, `user_name`) VALUES (?)";
   
     const values = [
-      "BAD habits",
-      "mmmmmmmmmmmmmmmmmmmmmmmmmm",
-      "madam"
+        req.body.title,
+        req.body.descr,
+        req.body.user_name,
+        
     ];
   
     db.query(q, [values], (err, data) => {
