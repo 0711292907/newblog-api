@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
   });
 
   app.post("/blog", (req, res) => {
-    const q = "INSERT INTO books(`title`, `descr`, `user_name`) VALUES (?)";
+    const q = "INSERT INTO posts(`title`, `descr`, `user_name`) VALUES (?)";
   
     const values = [
       "BAD habits",
