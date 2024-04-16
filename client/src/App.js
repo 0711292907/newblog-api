@@ -1,9 +1,19 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Add from "./pages/Add";
+import Books from "./pages/Posts";
+import Update from "./pages/Update";
 
 
 function App() {
   return (
-    <div className="App">
-      helloe world
+    <div className="app">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Posts />} />
+          <Route path="/add" element={<Add />} />
+          <Route path="/update/:id" element={<Update />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
